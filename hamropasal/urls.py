@@ -16,7 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from categories.views import get_categories
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^categories/',)
+    url(r'^categories/',get_categories)
 ]

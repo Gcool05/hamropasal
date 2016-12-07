@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>list of categories</title>
+    </head>
+    <body>
+        <h1>All categories</h1>
+        <ul>
+            {% for items in items %}
+            <li>{{ items.name }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

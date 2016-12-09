@@ -14,19 +14,18 @@ from .models import category
   #   get=get_body, 
   #     'status_code':200
   # }
-
-  html ="<html><head></head><body><ul>"
-  items = category.objects.all()
-  for items in items:
-      html += '<li>' + item.name +'</li>'
-    html += "</ul></body></html>"
-    return HttpResponse(html)
 def get_categories(request):
-    items =category.objects.all()
-    return render(
-        request,
-        'get_categories.html',
-        ('items':items)
-    )
-    print('..........',items)
-    return HttpResponse("hello categories")
+   html="<html><head></head><body><ul>"
+   items = category.objects.all()
+   for items in items:
+      html += '<li>' + items.name +'</li>'
+   html += "</ul></body></html>"
+   return HttpResponse(html)
+
+   items =category.objects.all()
+   return render(
+       request,
+       'get_categories.html',
+       ('items',items)
+            )       
+    
